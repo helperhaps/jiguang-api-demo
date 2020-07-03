@@ -21,8 +21,8 @@ jobs:
         run: |
           echo ${{GITHUB_WORKFLOW}}
           echo $GITHUB_WORKFLOW
-          echo ${{ steps.get_tag_version.output.VERSION }}
-          echo ${{ steps.extract_branch.output.branch }}
+          echo ${{ steps.get_tag_version.outputs.VERSION }}
+          echo ${{ steps.extract_branch.outputs.branch }}
 
           # tar jcvf x.tar.bz2 ruby
           # ls -al
