@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Get the version
         id: get_tag_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs/tags/}
       - name: Build project 
         run: |
           tar jcvf x.tar.bz2 ruby
