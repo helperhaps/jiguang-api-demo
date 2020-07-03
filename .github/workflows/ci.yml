@@ -1,5 +1,6 @@
 on:
   push:
+    branches: test
 
 name: Upload Release Asset
 
