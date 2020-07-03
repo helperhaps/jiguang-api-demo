@@ -19,8 +19,8 @@ jobs:
         id: extract_branch
       - name: Build project 
         run: |
-          echo ${{GITHUB_WORKFLOW}}
-          echo $GITHUB_WORKFLOW
+          # echo ${{GITHUB_WORKFLOW}}
+          # echo $GITHUB_WORKFLOW
           echo ${{ steps.get_tag_version.outputs.VERSION }}
           echo ${{ steps.extract_branch.outputs.branch }}
 
