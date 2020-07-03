@@ -17,7 +17,7 @@ jobs:
         run: |
           tar jcvf x.tar.bz2 ruby
           ls -al
-          echo ${{ steps.get_version.outputs.VERSION }}
+          echo ${{ GITHUB_REF }}
       # - name: Create Release
       #   id: create_release
       #   uses: actions/create-release@v1
