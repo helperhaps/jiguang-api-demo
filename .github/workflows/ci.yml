@@ -19,8 +19,8 @@ jobs:
         id: extract_branch
       - name: Build project 
         run: |
-          echo ${{ VERSION }}
-          echo ${{ branch }}
+          echo ${{ step.get_tag_version.VERSION }}
+          echo ${{ step.extract_branch.branch }}
 
           # tar jcvf x.tar.bz2 ruby
           # ls -al
