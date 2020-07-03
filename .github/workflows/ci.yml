@@ -13,11 +13,17 @@ jobs:
       - name: Get the version
         id: get_tag_version
         run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
       - name: Build project 
         run: |
-          tar jcvf x.tar.bz2 ruby
-          ls -al
-          echo ${{ GITHUB_REF }}
+          echo ${{ VERSION }}
+          echo ${{ branch }}
+
+          # tar jcvf x.tar.bz2 ruby
+          # ls -al
       # - name: Create Release
       #   id: create_release
       #   uses: actions/create-release@v1
